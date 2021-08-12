@@ -1,4 +1,5 @@
 
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -35,9 +36,10 @@ public class MovementInput : MonoBehaviour {
 
     public float verticalVel;
     private Vector3 moveVector;
+    private object charAnimator;
 
-	// Use this for initialization
-	void Start () {
+    // Use this for initialization
+    void Start () {
 		anim = this.GetComponent<Animator> ();
 		cam = Camera.main;
 		controller = this.GetComponent<CharacterController> ();
@@ -59,8 +61,27 @@ public class MovementInput : MonoBehaviour {
         moveVector = new Vector3(0, verticalVel * .2f * Time.deltaTime, 0);
         controller.Move(moveVector);
 
+		if (Input.GetButtonDown("Fire2"))
+		{
+			anim.SetBool("Punch",true);
+			Punch();
+		}
+		if (Input.GetButtonDown("Fire3"))
+		{
+			anim.SetBool("Kick", true);
+			Kick();
+		}
+	}
 
-    }
+	void Kick()
+	{
+		
+	}
+
+     void Punch()
+    {
+		
+	}
 
     void PlayerMoveAndRotation() {
 		InputX = Input.GetAxis ("Horizontal");
@@ -128,4 +149,6 @@ public class MovementInput : MonoBehaviour {
 			Destroy(gameObject);
 		}
 	}
+
+	
 }

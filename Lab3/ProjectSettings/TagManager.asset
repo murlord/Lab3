@@ -18,9 +18,9 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
+  - whatIsPlayer
+  - whatIsGround
+  - whatIsEnemy
   - 
   - 
   - 
@@ -45,4 +45,10 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: whatIsGround
+    uniqueID: 1102872467
+    locked: 0
+  - name: whatIsPlayer
+    uniqueID: 1378139855
     locked: 0
